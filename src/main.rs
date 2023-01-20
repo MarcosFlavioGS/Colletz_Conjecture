@@ -16,12 +16,12 @@ fn main() {
 
     while input > 1 {
         if input % 2 == 0 {
-            println!("Even. Dividing by 2...");
+            println!("Even. Dividing {} by 2...", input);
             input = input / 2;
             println!("{}", input);
             _counter += 1;
         } else {
-            println!("Odd. Multiplying by 3 + 1...");
+            println!("Odd. {} * 3 + 1...", input);
             input = input * 3 + 1;
             println!("{}", input);
             _counter += 1;
