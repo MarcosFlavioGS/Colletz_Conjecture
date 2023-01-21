@@ -10,7 +10,7 @@ fn main() {
         .read_line(&mut input)
         .expect("Failed to read line");
 
-    let mut input: u64 = input.trim().parse().expect("Please pass a number");
+    let mut input: usize = input.trim().parse().expect("Please pass a number");
 
     println!("Number chosen: {}", input);
 
