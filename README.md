@@ -1,5 +1,5 @@
 # Colletz_conjecture-testing
-This is a simple program to prove a math concept that I came across recently
+This is a simple program to demonstrate a math concept.
 
 -- Wikipedia
 - The Collatz conjecture is one of the most famous unsolved problems in mathematics. The conjecture asks whether repeating two simple arithmetic operations will eventually
