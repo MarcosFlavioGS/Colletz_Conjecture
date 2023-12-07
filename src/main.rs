@@ -1,7 +1,25 @@
 use std::io;
 
-fn main() {
+fn get_list(mut input: usize) -> (Vec<usize>, u64) {
+    let mut lst: Vec<usize> = Vec::new();
     let mut _counter: u64 = 0;
+
+    while input > 1 {
+        if input % 2 == 0 {
+            input = input / 2;
+            lst.push(input);
+            _counter += 1;
+        } else {
+            input = input * 3 + 1;
+            lst.push(input);
+            _counter += 1;
+        }
+    }
+
+    (lst, _counter)
+}
+
+fn main() {
     let mut input = String::new();
 
     println!("Type a number for the test: ");
@@ -10,22 +28,14 @@ fn main() {
         .read_line(&mut input)
         .expect("Failed to read line");
 
-    let mut input: usize = input.trim().parse().expect("Please pass a number");
+    let input: usize = input.trim().parse().expect("Please pass a number");
 
     println!("Number chosen: {}", input);
 
-    while input > 1 {
-        if input % 2 == 0 {
-            println!("Even. Dividing {} by 2...", input);
-            input = input / 2;
-            println!("{}", input);
-            _counter += 1;
-        } else {
-            println!("Odd. {} * 3 + 1...", input);
-            input = input * 3 + 1;
-            println!("{}", input);
-            _counter += 1;
-        }
-    }
-    println!("Total of tests made: {}", _counter);
+    let (lst, _counter) = get_list(input);
+
+    lst.iter().for_each(|num| {
+        println!("{}", num);
+    })
+
 }
